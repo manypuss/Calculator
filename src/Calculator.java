@@ -1,18 +1,4 @@
-/*import java.util.*;
-public class Calculate {
-    public static void main (String [] args) {
-        Scanner scan = new Scanner(System.in);
-        System.out.println("Введите число от 1 до 10");
-        String input = scan.nextLine();
-        String[] strings = input.split("\\W");
-        String[] operator = input.split("\\w");
-        System.out.println(Arrays.toString(strings));
-        System.out.println(Arrays.toString(operator));
 
-
-    }
-
-}*/
 import java.util.*;
 
 public class Calculator {
