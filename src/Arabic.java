@@ -1,18 +1,18 @@
 public class Arabic {
     static void calculatingArabicNumerals (String input) {
-        int a = 0;
-        int b = 0;
-        String op = "";
+        int num1 = 0;
+        int num2 = 0;
+        String operator = "";
         String[] numerals = input.split("\\W");
-        String[] operator = input.split("\\w");
+        String[] arrayWithOperator = input.split("\\w");
         Calculator.checkingTheLengthOfTheArray(numerals);
-        a = Integer.parseInt(numerals[0]);
-        b = Integer.parseInt(numerals[1]);
-        op = operator[operator.length - 1];
-        if ((a < 1 | b < 1) | (a > 10 | b > 10)) {
+        num1 = Integer.parseInt(numerals[0]);
+        num2 = Integer.parseInt(numerals[1]);
+        operator = arrayWithOperator[arrayWithOperator.length - 1];
+        if ((num1 < 1 | num2 < 1) | (num1 > 10 | num2 > 10)) {
             throw new MyException("Введенные числа выходят за рамки диапазона от 1 до 10");
         } else {
-            System.out.println("Result = " + Calculator.operation(a, b, op));
+            System.out.println("Result = " + Calculator.calculate(num1, num2, operator));
         }
 
     }

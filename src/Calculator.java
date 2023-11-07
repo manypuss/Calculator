@@ -22,16 +22,16 @@ public class Calculator {
 
     }
 
-    static int operation(int a, int b, String op) {
-        switch (op) {
+    static int calculate (int num1, int num2, String operator) {
+        switch (operator) {
             case "*":
-                return a * b;
+                return num1 * num2;
             case "+":
-                return a + b;
+                return num1 + num2;
             case "-":
-                return a - b;
+                return num1 - num2;
             case "/":
-                return a / b;
+                return num1 / num2;
             default:
                 return 0;
         }
