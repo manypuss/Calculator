@@ -8,11 +8,14 @@ public class Calculator {
         Scanner sc = new Scanner(System.in);
         String input = sc.next();
         while (!input.equals("Выход")) {
-            DataVerification(input);
+            if(isAlphaNumeric(input)) {
+                throw new MyException("т.к. используются одновременно разные системы счисления");
+            }
+
             if (input.matches(".*\\d.*")) {
-                Arabic.arabic(input);
+                Arabic.calculatingArabicNumerals(input);
             } else if (input.matches(".*\\D.*")) {
-                Roman.roman(input);
+                Roman.calculatingRomanNumerals(input);
             }
             input = sc.next();
         }
@@ -34,19 +37,11 @@ public class Calculator {
         }
     }
 
-    static void DataVerificationArrays(String[] verification) {
-        if (verification.length <= 1) {
+    static void checkingTheLengthOfTheArray(String[] array) {
+        if (array.length <= 1) {
             throw new MyException("т.к. строка не является математической операцией");
-        } else if (verification.length > 2) {
+        } else if (array.length > 2) {
             throw new MyException("т.к. формат математической операции не удовлетворяет заданию - два операнда и один оператор (+, -, /, *)");
-        }
-
-    }
-
-    static void DataVerification(String verification) {
-
-        if (isAlphaNumeric(verification)) {
-            throw new MyException("т.к. используются одновременно разные системы счисления");
         }
 
     }
