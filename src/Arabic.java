@@ -1,11 +1,11 @@
 public class Arabic {
-    static void calculatingArabicNumerals (String input) {
+    static void calculateArabicNumerals (String input) {
         int num1 = 0;
         int num2 = 0;
         String operator = "";
         String[] numerals = input.split("\\W");
         String[] arrayWithOperator = input.split("\\w");
-        Calculator.checkingTheLengthOfTheArray(numerals);
+        Calculator.checkLengthArray(numerals);
         num1 = Integer.parseInt(numerals[0]);
         num2 = Integer.parseInt(numerals[1]);
         operator = arrayWithOperator[arrayWithOperator.length - 1];

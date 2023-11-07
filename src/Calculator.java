@@ -5,19 +5,19 @@ public class Calculator {
     public static void main(String[] args) {
 
         System.out.println("Введите числа от 1 до 10:\nДля выхода введите 'Выход'");
-        Scanner sc = new Scanner(System.in);
-        String input = sc.next();
+        Scanner scanner = new Scanner(System.in);
+        String input = scanner.next();
         while (!input.equals("Выход")) {
             if(isAlphaNumeric(input)) {
                 throw new MyException("т.к. используются одновременно разные системы счисления");
             }
 
             if (input.matches(".*\\d.*")) {
-                Arabic.calculatingArabicNumerals(input);
+                Arabic.calculateArabicNumerals(input);
             } else if (input.matches(".*\\D.*")) {
-                Roman.calculatingRomanNumerals(input);
+                Roman.calculateRomanNumerals(input);
             }
-            input = sc.next();
+            input = scanner.next();
         }
 
     }
@@ -37,7 +37,7 @@ public class Calculator {
         }
     }
 
-    static void checkingTheLengthOfTheArray(String[] array) {
+    static void checkLengthArray(String[] array) {
         if (array.length <= 1) {
             throw new MyException("т.к. строка не является математической операцией");
         } else if (array.length > 2) {

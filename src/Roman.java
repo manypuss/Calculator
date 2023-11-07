@@ -1,13 +1,13 @@
 public class Roman {
 
-    static void calculatingRomanNumerals (String input) {
+    static void calculateRomanNumerals (String input) {
         int num1 = 0;
         int num2 = 0;
         String operator = "";
 
         String[] numerals = input.split("\\W");
         String[] arrayWithOperator = input.split("\\w");
-        Calculator.checkingTheLengthOfTheArray(numerals);
+        Calculator.checkLengthArray(numerals);
 
         num1 = RomanNumerals.valueOf(numerals[0]).getI();
         num2 = RomanNumerals.valueOf(numerals[1]).getI();
